@@ -43,6 +43,7 @@ The best results came from a **stacked PLS + Ridge** ensemble.
 | PLS + Ridge (Average)     | 1.476                      |
 | Ridge                     | 1.518                      |
 | **PLS + Ridge (Stacked)** | **1.610**                  |
+<img width="373" height="280" alt="image" src="https://github.com/user-attachments/assets/facaa090-6027-4dc8-bfbf-03711a432731" />
 
 **Best Performing Model:** `Stacked PLS + Ridge`  
 - Extracts informative latent variables via PLS  
@@ -55,6 +56,8 @@ The best results came from a **stacked PLS + Ridge** ensemble.
 - **Macronutrients** (N, P, K) consistently achieved **RPD > 2** in strong-performing seasons  
 - **Micronutrients** (e.g., B, Zn, Fe) remained challenging — RPD often < 1.5  
 - Performance varied by season and sample type (fresh vs dried), due to **concept drift** and **sample variability**
+<img width="252" height="158" alt="image" src="https://github.com/user-attachments/assets/5dbbb4d2-5641-49c3-83eb-8f8556016acc" />
+<img width="256" height="159" alt="image" src="https://github.com/user-attachments/assets/c834f4a6-5a5f-43d4-90d7-bd5d743cc606" />
 
 
 ## Folder Structure
