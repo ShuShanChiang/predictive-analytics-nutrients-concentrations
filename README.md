@@ -57,29 +57,6 @@ The best results came from a **stacked PLS + Ridge** ensemble.
 - Performance varied by season and sample type (fresh vs dried), due to **concept drift** and **sample variability**
 
 
-## Cross-Season Generalization
-
-- Low model transferability between seasons  
-- Performance drops notably when training on one season and testing on another  
-- Indicates the need for **season-aware models** or **transfer learning techniques**
-
-
-## Future Work
-
-- Cross-season training and transfer learning  
-- Physically realistic data augmentation (e.g., Gaussian noise instead of Mixup)  
-- Explore non-linear models (e.g., tuned Random Forests with cloud resources)
-
-
-## Real-World Impact
-
-This workflow shows potential for:
-- Smart fertilization recommendations  
-- Real-time crop monitoring  
-- Sustainable precision agriculture
-
-
-
 ## Folder Structure
 ```
 predictive-analytics-nutrients-concentrations/
