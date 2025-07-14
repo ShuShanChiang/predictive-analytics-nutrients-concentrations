@@ -56,8 +56,9 @@ The best results came from a **stacked PLS + Ridge** ensemble.
 - **Macronutrients** (N, P, K) consistently achieved **RPD > 2** in strong-performing seasons  
 - **Micronutrients** (e.g., B, Zn, Fe) remained challenging — RPD often < 1.5  
 - Performance varied by season and sample type (fresh vs dried), due to **concept drift** and **sample variability**
-<img width="252" height="158" alt="image" src="https://github.com/user-attachments/assets/5dbbb4d2-5641-49c3-83eb-8f8556016acc" />
-<img width="256" height="159" alt="image" src="https://github.com/user-attachments/assets/c834f4a6-5a5f-43d4-90d7-bd5d743cc606" />
+<img width="786" height="490" alt="image" src="https://github.com/user-attachments/assets/b8dd5303-4722-4ea8-b7ee-653a4f644e69" />
+<img width="786" height="490" alt="image" src="https://github.com/user-attachments/assets/b70be928-a242-4796-9185-addb163c7186" />
+
 
 
 ## Folder Structure
