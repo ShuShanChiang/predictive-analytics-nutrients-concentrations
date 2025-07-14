@@ -1,37 +1,93 @@
-# Predictive Analytics for Nutrient Concentration Estimation
+# Predictive Analytics for Nutrient Estimation in Potato Plants
 
-This project explores the use of near-infrared spectroscopy (NIRS) and machine learning to estimate nutrient concentrations in potato leaves. By leveraging a stacked Partial Least Squares (PLS) and Ridge Regression model, we aim to improve predictive performance and interpretability—supporting more efficient, non-destructive nutrient monitoring in agriculture.
+This project develops a machine learning pipeline using **near-infrared spectroscopy (NIRS)** data to estimate multiple nutrient concentrations in potato leaves. The solution integrates **Partial Least Squares Regression (PLSR)** with **Ridge Regression** in a **stacked ensemble**, achieving strong predictive performance across seasons — particularly for macronutrients (N, P, K).
 
-## Project Highlights
+---
 
-- Predicts multiple nutrient concentrations (e.g., N, P, K) from hyperspectral reflectance data
-- Implements a scalable pipeline with:
-  - Hybrid imputation for missing data
-  - Spectral resampling and z-score normalization
-  - PLSR for dimensionality reduction
-  - Stacked ensemble learning (PLS + Ridge)
-- Focus on macronutrient prediction and seasonal generalization
-- Evaluation using RPD, RMSE, and R² metrics
+## Problem Statement
 
-## Methodology
+Traditional nutrient testing is destructive and labor-intensive. Our goal:  
+**Build a non-destructive, fast, and scalable nutrient estimation pipeline using spectral reflectance data.**
 
-1. **Preprocessing**: Data cleaning, IQR-based outlier removal, and Winsorization
-2. **Dimensionality Reduction**: Supervised PLS regression
-3. **Modeling**: Ridge Regression and stacking with weighted loss
-4. **Evaluation**: Cross-validation and seasonal testing on fresh vs. dried datasets
+---
 
-## Results
+## Method Overview
 
-- Best RPD > 4.5 for nitrogen in optimal seasons
-- PLS–Ridge stacking achieved highest mean RPD (1.61)
-- Generalization limited by seasonal variability (concept drift)
-- Strongest performance on dried-season2 samples
+**Data Source**  
+- Potato leaf spectral reflectance data (400–2500 nm), collected across four seasons  
+- Both **fresh** and **dried** samples were used to assess generalizability
 
-## Tech Stack
+**Pipeline Stages**  
+1. **Data Preprocessing**
+   - Missing value imputation (median for <10%, KNN for others)
+   - Outlier handling (IQR method, winsorization)
+   - Spectral resampling to 1nm resolution
 
-- Python (NumPy, Pandas, Scikit-learn, Seaborn)
-- Jupyter Notebook / VSCode
-- Fixed random seed for reproducibility
+2. **Dimensionality Reduction**
+   - Partial Least Squares Regression (PLSR) with 10-fold CV
+
+3. **Modeling**
+   - Baseline models: PLS, Ridge, Lasso, SVR, Random Forest, XGBoost
+   - Final: **Stacked PLS + Ridge Regression** using weighted loss
+
+4. **Evaluation Metrics**
+   - Primary: **RPD (Ratio of Prediction to Deviation)**
+   - Secondary: R², RMSE
+
+---
+
+## Model Selection and Comparison
+
+We experimented with individual and combined models.  
+The best results came from a **stacked PLS + Ridge** ensemble.
+
+| Model                     | Average RPD (All Elements) |
+|---------------------------|----------------------------|
+| PLS                       | 1.319                      |
+| PLS + Ridge (Average)     | 1.476                      |
+| Ridge                     | 1.518                      |
+| **PLS + Ridge (Stacked)** | **1.610**                  |
+
+**Best Performing Model:** `Stacked PLS + Ridge`  
+- Extracts informative latent variables via PLS  
+- Stabilizes predictions with Ridge regularization  
+- Significantly improves over any individual model
+
+---
+
+## Validation Insights
+
+- **Macronutrients** (N, P, K) consistently achieved **RPD > 2** in strong-performing seasons  
+- **Micronutrients** (e.g., B, Zn, Fe) remained challenging — RPD often < 1.5  
+- Performance varied by season and sample type (fresh vs dried), due to **concept drift** and **sample variability**
+
+---
+
+## Cross-Season Generalization
+
+- Low model transferability between seasons  
+- Performance drops notably when training on one season and testing on another  
+- Indicates the need for **season-aware models** or **transfer learning techniques**
+
+---
+
+## Future Work
+
+- Cross-season training and transfer learning  
+- Physically realistic data augmentation (e.g., Gaussian noise instead of Mixup)  
+- Explore non-linear models (e.g., tuned Random Forests with cloud resources)
+
+---
+
+## Real-World Impact
+
+This workflow shows potential for:
+- Smart fertilization recommendations  
+- Real-time crop monitoring  
+- Sustainable precision agriculture
+
+---
+
 
 ## Folder Structure
 ```
