@@ -64,4 +64,5 @@ predictive-analytics-nutrients-concentrations/
 ├── preprocessing/  # Scripts or notebooks for data cleaning and imputation
 ├── models/         # Model training, evaluation, and ensemble code
 └── README.md       # Project overview
+└── final report    # final academic report
 ```
