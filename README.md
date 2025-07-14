@@ -4,7 +4,7 @@ This project develops a machine learning pipeline using **near-infrared spectros
 
 ## Problem Statement
 
-Traditional nutrient testing is destructive and labor-intensive. Our goal:  
+Traditional nutrient testing is destructive and labor-intensive. The goal is to:  
 **Build a non-destructive, fast, and scalable nutrient estimation pipeline using spectral reflectance data.**
 
 
