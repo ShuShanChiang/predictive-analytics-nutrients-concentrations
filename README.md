@@ -34,8 +34,8 @@ This project explores the use of near-infrared spectroscopy (NIRS) and machine l
 - Fixed random seed for reproducibility
 
 ## Folder Structure
-project-root/
-┣ data/ # Raw and processed datasets
-┣ notebooks/ # Exploratory and training notebooks
-┣ models/ # Saved models or output
-┗ README.md
+predictive-analytics-nutrients-concentrations/
+├── data/ # Raw and processed spectral data (fresh and dried leaf samples)
+├── preprocessing/ # Scripts or notebooks for data cleaning and imputation
+├── models/ # Model training, evaluation, and ensemble code
+└── README.md # Project overview
