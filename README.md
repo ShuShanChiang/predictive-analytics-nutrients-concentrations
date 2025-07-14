@@ -2,8 +2,6 @@
 
 This project develops a machine learning pipeline using **near-infrared spectroscopy (NIRS)** data to estimate multiple nutrient concentrations in potato leaves. The solution integrates **Partial Least Squares Regression (PLSR)** with **Ridge Regression** in a **stacked ensemble**, achieving strong predictive performance across seasons — particularly for macronutrients (N, P, K).
 
----
-
 ## Problem Statement
 
 Traditional nutrient testing is destructive and labor-intensive. Our goal:  
