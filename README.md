@@ -7,7 +7,6 @@ This project develops a machine learning pipeline using **near-infrared spectros
 Traditional nutrient testing is destructive and labor-intensive. Our goal:  
 **Build a non-destructive, fast, and scalable nutrient estimation pipeline using spectral reflectance data.**
 
----
 
 ## Method Overview
 
@@ -32,7 +31,6 @@ Traditional nutrient testing is destructive and labor-intensive. Our goal:
    - Primary: **RPD (Ratio of Prediction to Deviation)**
    - Secondary: R², RMSE
 
----
 
 ## Model Selection and Comparison
 
@@ -51,7 +49,6 @@ The best results came from a **stacked PLS + Ridge** ensemble.
 - Stabilizes predictions with Ridge regularization  
 - Significantly improves over any individual model
 
----
 
 ## Validation Insights
 
@@ -59,7 +56,6 @@ The best results came from a **stacked PLS + Ridge** ensemble.
 - **Micronutrients** (e.g., B, Zn, Fe) remained challenging — RPD often < 1.5  
 - Performance varied by season and sample type (fresh vs dried), due to **concept drift** and **sample variability**
 
----
 
 ## Cross-Season Generalization
 
@@ -67,7 +63,6 @@ The best results came from a **stacked PLS + Ridge** ensemble.
 - Performance drops notably when training on one season and testing on another  
 - Indicates the need for **season-aware models** or **transfer learning techniques**
 
----
 
 ## Future Work
 
@@ -75,7 +70,6 @@ The best results came from a **stacked PLS + Ridge** ensemble.
 - Physically realistic data augmentation (e.g., Gaussian noise instead of Mixup)  
 - Explore non-linear models (e.g., tuned Random Forests with cloud resources)
 
----
 
 ## Real-World Impact
 
@@ -84,7 +78,6 @@ This workflow shows potential for:
 - Real-time crop monitoring  
 - Sustainable precision agriculture
 
----
 
 
 ## Folder Structure
